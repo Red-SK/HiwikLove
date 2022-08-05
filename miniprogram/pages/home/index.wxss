@@ -1,0 +1,69 @@
+/* pages/index/index.wxss */
+
+
+
+.right {
+    background-color: red;
+    height: inherit;
+    width: 65px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.van-info{
+    background-color: pink;
+}
+.fitIcon {
+    
+    position: absolute;
+    right: 10px;
+}
+
+.userImg {
+    border-radius: 15rpx;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 6px;
+
+   
+}
+.userRoot{
+    padding:16px 3px;
+}
+.gridbackground{
+    height: 83px;
+    background-color: var(--grid-item-content-background-color,#fff);
+}
+
+.theRow{
+    margin-left:16px;
+    margin-right:16px;
+    
+}
+.newradius{
+    border-radius: 30px;
+}
+
+.footer {
+    z-index: 10;
+  }
+  
+  .add {
+    width: var(--button-size);
+    height: var(--button-size);
+    position: fixed;
+    bottom: calc(var(--footer-height) - var(--button-size) / 2);
+    left: calc(50% - var(--button-size) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: calc(var(--button-size) / 2);
+    background-color: var(--button-color);
+    background: #F4A7B9;
+  }
+  
+  .add-image {
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+  }
