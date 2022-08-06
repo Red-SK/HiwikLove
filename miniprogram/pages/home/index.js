@@ -8,6 +8,7 @@ Page({
         test: "",
         active: 0,
         checked: "",
+        tabvalue: 0,
     },
 
     /**
@@ -102,15 +103,21 @@ Page({
     onChange(event) {
         // event.detail 的值为当前选中项的索引
         this.setData({
-            active: event.detail
+             tabvalue: event.detail
         });
     },
-
+    tabChange(event) {
+        // event.detail 的值为当前选中项的索引
+        this.setData({
+            tabvalue: event.detail
+        });
+    },
+   
     addMission() {
         console.log("add")
     },
 
-    edit(){
+    edit() {
         console.log("edit")
     }
 })

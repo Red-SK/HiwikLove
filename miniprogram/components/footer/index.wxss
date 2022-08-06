@@ -8,6 +8,7 @@
   border-top: #E0E0E0 solid 1px;
   background: white;
   z-index: 10;
+  
 }
 
 .add {
@@ -20,11 +21,12 @@
   justify-content: center;
   align-items: center;
   border-radius: calc(var(--button-size) / 2);
-  background-color: var(--button-color);
-  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 10px;
+  color: rgba(255, 222, 228, 1);
+
 }
 
 .add-image {
+    
   width: var(--button-icon-size);
   height: var(--button-icon-size);
 }

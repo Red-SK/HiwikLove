@@ -2,68 +2,120 @@
 
 
 
-.right {
-    background-color: red;
-    height: inherit;
-    width: 65px;
-    color: white;
+
+.navRow {
+    height: 47px;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.van-info{
-    background-color: pink;
-}
-.fitIcon {
+    background-color: #FFFFFF;
     
-    position: absolute;
-    right: 10px;
+}
+.yellowRetangle {
+    width: 9px;
+    height: 47px;
+    background-color: rgba(252, 236, 83, 1);
+    border-radius: 0px 0px 2px 0px;
 }
 
-.userImg {
-    border-radius: 15rpx;
-    position: absolute;
-    margin-top: 3px;
-    margin-left: 6px;
+.pinkRetangle {
 
+    width: 9px;
+    height: 17px;
+    opacity: 1;
+    background: rgba(252, 228, 233, 1);
+    margin-left: 2px;
+    border-radius: 0px 0px 2px 2px;
+}
+
+.photo {
+    border-radius: 0px 2px 2px 2px;
+    margin-left: 2px;
+    width: 47px;
+    height: 47px;
+    opacity: 1;
+    background: rgba(229, 229, 229, 1);
+}
+
+.imageRadius {
+    border-radius: 0px 2px 2px 2px;
+}
+.whiteRectangle{
+    height: 17px;
+    
+}
+.right{
+    width: 100%;
+}
+.navTab {
    
-}
-.userRoot{
-    padding:16px 3px;
-}
-.gridbackground{
-    height: 83px;
-    background-color: var(--grid-item-content-background-color,#fff);
-}
-
-.theRow{
-    margin-left:16px;
-    margin-right:16px;
-    
-}
-.newradius{
-    border-radius: 30px;
+    height:30px;
+    opacity: 0.5;
+    border-radius: 2px 0px 0px 2px;
+    background: rgba(250, 202, 213, 1);
+    margin-left: 4px;
+    z-index: 1;
 }
 
-.footer {
-    z-index: 10;
-  }
-  
+.context{
+    margin-top: 17px;
+    width: 100%;
+}
+.cell{
+    position: flex;
+    height: 35px;
+}
+.myicon{
+    margin-top: 3px;
+    margin-left: 1px;
+    height: 16px;
+    width: 16px;
+}
+.item{
+    margin-top: 10px;
+}
+.customCell{
+    background-color: rgba(255, 250, 251, 1) !important;
+}
+.point1{
+    color: rgba(240, 161, 176, 1);
+    margin-right:2px;
+}
+.point2{
+    color: rgba(240, 161, 176, 1);
+}
+
+
+.van-icon--image{
+ width: 30px;
+ height: 30px;
+}
+
   .add {
-    width: var(--button-size);
-    height: var(--button-size);
+    width: 69px;
+    height:69px;
     position: fixed;
-    bottom: calc(var(--footer-height) - var(--button-size) / 2);
-    left: calc(50% - var(--button-size) / 2);
+    bottom: 97px;
+    left: calc(50% - 69px / 2);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: calc(var(--button-size) / 2);
-    background-color: var(--button-color);
-    background: #F4A7B9;
+    border-radius: 35.5px;
+    background-color: rgba(255, 222, 228, 1);
   }
   
   .add-image {
-    width: var(--button-icon-size);
-    height: var(--button-icon-size);
+    width: 35px;
+    height:35px;
   }
+.tabbar{
+    height: 73px;
+}
+
+
+
+
+
+
+
+
+

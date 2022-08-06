@@ -1,66 +1,58 @@
 <!--pages/home/index.wxml-->
 
-<view>
-    <view class="theRow">
-        <van-row>
-            <van-col span="4" >
-                <van-image width="40px" height="40px" fit="cover" image-class="userImg" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-            </van-col>
-            <van-col span="20">
-                <van-tabs active="{{ active }}" bind:change="onChange">
-                    <van-tab title="Do"></van-tab>
-                    <van-tab title="Don't"></van-tab>
-                </van-tabs>
-            </van-col>
-        </van-row>
+<view class="navRow">
+    <view class="yellowRetangle"></view>
+    <view class="pinkRetangle"></view>
+    <view class="photo">
+        <van-image width="47" height="47" fit="cover" image-class="imageRadius" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    </view>
+
+
+    <view class="right">
+        <view class="whiteRectangle"></view>
+        <van-tabs line-width="125px" color="white" title-active-color="#FFFFFF" active="{{ active }}" bind:change="" nav-class="navTab">
+            <van-tab title="can"></van-tab>
+            <van-tab title="can't"></van-tab>
+        </van-tabs>
+    </view>
+</view>
+<view class="context">
+    <view class="cell">
+        <van-swipe-cell right-width="{{ 65 }}">
+            <van-cell-group inset="true" >
+                <van-cell clickable="true" custom-class="customCell" icon="flower-o"  title="考研上岸">
+                  <view slot="">
+                    <text class="point1">+500</text>
+                    <text class="point2">|</text>
+                  </view>
+                    <view slot="right-icon">
+                        <image src="../../images/icon/rabbit.svg" class="myicon"></image>
+                    </view>
+                </van-cell>
+
+            </van-cell-group>
+            <view slot="right">删除</view>
+        </van-swipe-cell>
+        <view class="item">
+
+        </view>
+       
     </view>
 </view>
 
-<view class="list">
-    <van-swipe-cell right-width="{{ 65 }}">
-        <van-cell-group inset>
-            <van-cell  clickable bindtap="edit" size="large" icon="like-o">
-                <view slot="title">
-                    <view class="van-cell-text">任务1
-                        <van-icon name="star-o" info="11" size="25px" class="fitIcon" />
-                    </view>
-                </view>
-            </van-cell>
-        </van-cell-group>
-        <view slot="right" class="right"> 删除</view>
-    </van-swipe-cell>
-    <van-swipe-cell right-width="{{ 65 }}">
-        <van-cell-group inset>
-            <van-cell clickable bindtap="edit"  size="large" icon="like-o">
-                <view slot="title">
-                    <view class="van-cell-text">任务2
-                        <van-icon name="star-o" info="5" size="25px" class="fitIcon" />
-                    </view>
-                </view>
-            </van-cell>
-        </van-cell-group>
-        <view slot="right" class="right"> 删除</view>
-    </van-swipe-cell>
-    <van-swipe-cell right-width="{{ 65 }}">
-        <van-cell-group inset>
-            <van-cell clickable bindtap="edit" size="large" icon="fire-o">
-                <view slot="title">
-                    <view class="van-cell-text">任务3
-                        <van-icon name="star-o" info="21" size="25px" class="fitIcon" />
-                    </view>
-                </view>
-            </van-cell>
-        </van-cell-group>
-        <view slot="right" class="right"> 删除</view>
-    </van-swipe-cell>
-</view>
 <view class="footer">
-    <view class="add" bindtap="addMission">
-        <image class="add-image" src="../../images/footer/add.png" />
+    <view class="add" bindtap="add">
+      <image class="add-image" src="../../images/icon/add.svg"/>
     </view>
 </view>
-<van-tabbar active="{{ active }}" bind:change="onChange">
-    <van-tabbar-item icon="todo-list-o">Doing</van-tabbar-item>
-    <van-tabbar-item icon="completed">Done</van-tabbar-item>
+
+
+
+
+
+<van-tabbar active-color="pink !important" active="{{ tabvalue }}" bind:change="tabChange">
+    <van-tabbar-item icon="star">任务</van-tabbar-item>
+    <van-tabbar-item icon="shop-collect">奖励</van-tabbar-item>
+    <van-tabbar-item icon="setting">设置</van-tabbar-item>
 
 </van-tabbar>

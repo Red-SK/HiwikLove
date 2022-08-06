@@ -1,20 +1,16 @@
 {
     "pages": [
-      
         "pages/home/index"
-      
-      
     ],
     "window": {
-        "backgroundColor": "#F6F6F6",
+        "backgroundColor": "#000000",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F4A7B9",
+        "navigationBarBackgroundColor": "#FFFFFF",
         "navigationBarTitleText": "HiwikLove",
         "navigationBarTextStyle": "black"
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
-       
         "van-row": "@vant/weapp/row/index",
         "van-col": "@vant/weapp/col/index",
         "van-image": "@vant/weapp/image/index",
