@@ -1,12 +1,13 @@
 {
     "pages": [
-        "pages/home/index"
+        "pages/home/index",
+        "pages/addTask/index"
     ],
     "window": {
-        "backgroundColor": "#000000",
+        "backgroundColor": "#FFFFFF",
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#FFFFFF",
-        "navigationBarTitleText": "HiwikLove",
+        "navigationBarTitleText": "iwiPlan",
         "navigationBarTextStyle": "black"
     },
     "sitemapLocation": "sitemap.json",
@@ -19,13 +20,23 @@
         "van-switch": "@vant/weapp/switch/index",
         "van-cell": "@vant/weapp/cell/index",
         "van-cell-group": "@vant/weapp/cell-group/index",
-        "van-tag": "@vant/weapp/tag/index" ,
+        "van-tag": "@vant/weapp/tag/index",
         "van-swipe-cell": "@vant/weapp/swipe-cell/index",
         "van-icon": "@vant/weapp/icon/index",
         "van-tabbar": "@vant/weapp/tabbar/index",
         "van-tabbar-item": "@vant/weapp/tabbar-item/index",
         "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index"
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-checkbox": "@vant/weapp/checkbox/index",
+        "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+        "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+        "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-radio": "@vant/weapp/radio/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-stepper": "@vant/weapp/stepper/index",
+        "van-toast": "@vant/weapp/toast/index"
     }
-
 }

@@ -5,10 +5,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-        test: "",
+        openid: "",
         active: 0,
         checked: "",
-        tabvalue: 0,
+        tasks: [],
+        can: [],
+        cant:[],
+        tabvalue:0,
+        profile:"",
+       
     },
 
     /**
@@ -29,32 +34,39 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
+      
+        // 通过云函数调用获取用户 _openId
         getApp().getOpenId().then(async openid => {
-            this.setData({
-                test: openid,
+            // 根据 _openId 数据，查询任务列表
+            const db = await getApp().database()
+            console.log(openid)
+            db.collection('task').where({
+                _openid: openid
+            }).get().then(res => {
+                const {
+                    data
+                } = res
+                // 存储查询到的数据
+                console.log(res)
+                res.data.forEach(item=>{
+                    item.iconPath =  "../../images/icon/Mission/"+item.category+".svg";
+                })
+                console.log(res)
+               
+                this.setData({
+                    // data 为查询到的所有待办事项列表
+                    tasks: data,
+                    // 通过 filter 函数，将待办事项分为can与cant两部分
+                    can: data.filter(tasks => tasks.can === true),
+                    cant: data.filter(tasks => tasks.can === false)
+                })
+              
+                console.log(this.data.tasks)
+                console.log(this.data.can)
+                console.log(this.data.cant)
             })
         })
 
-        // 通过云函数调用获取用户 _openId
-        // getApp().getOpenId().then(async openid => {
-        //     // 根据 _openId 数据，查询并展示待办列表
-        //     const db = await getApp().database()
-        //     db.collection(getApp().globalData.collection).where({
-        //         _openid: openid
-        //     }).get().then(res => {
-        //         const {
-        //             data
-        //         } = res
-        //         // 存储查询到的数据
-        //         this.setData({
-        //             // data 为查询到的所有待办事项列表
-        //             todos: data,
-        //             // 通过 filter 函数，将待办事项分为未完成和已完成两部分
-        //             pending: data.filter(todo => todo.freq === 0),
-        //             finished: data.filter(todo => todo.freq === 1)
-        //         })
-        //     })
-        // })
     },
 
     /**
@@ -103,7 +115,7 @@ Page({
     onChange(event) {
         // event.detail 的值为当前选中项的索引
         this.setData({
-             tabvalue: event.detail
+            tabvalue: event.detail
         });
     },
     tabChange(event) {
@@ -112,12 +124,14 @@ Page({
             tabvalue: event.detail
         });
     },
-   
-    addMission() {
-        console.log("add")
-    },
 
+    add() {
+        wx.navigateTo({
+            url: '../addTask/index',
+        })
+    },
     edit() {
         console.log("edit")
     }
+
 })

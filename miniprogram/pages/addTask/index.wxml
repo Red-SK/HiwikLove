@@ -1,0 +1,45 @@
+<view class="context">
+    <van-cell-group inset >
+        <van-field type="digit !important213" model:value="{{ task }}" placeholder="请输入任务名称" >
+            <view slot="left-icon">
+                <image src="../../images/icon/24task.svg" class="icon-left"></image>
+            </view>
+        </van-field>
+        <van-cell title="设置积分">
+            <view slot="icon">
+                <image src="../../images/icon/rabbit.png" class="icon-left"></image>
+            </view>
+            <van-stepper value="{{point }}" max="1000" input-width="44px" input-class="stepRoot" bind:change="stepper"
+            plus-class="plus" minus-class="minus"
+            />
+        </van-cell>
+        <van-cell  title="{{category}}" bind:click="showPopup"  is-link>
+            <view slot="icon">
+                <image src="../../images/icon/category.svg" class="icon-left"></image>
+            </view>
+        </van-cell>
+        <van-popup show="{{ show }}" bind:close="onClose" overlay position="bottom">
+            <van-picker show-toolbar title="任务类型" columns="{{ categorys }}" bind:cancel="pickCancel" bind:confirm="pickConfirm" />
+        </van-popup>
+    </van-cell-group>
+    <van-cell-group inset custom-class="group2" >
+        <van-cell title="循环任务" custom-class="switchCell">
+            <view slot="icon">
+                <image src="../../images/icon/longtime.svg" class ="icon-left"></image>
+            </view>
+            <van-switch size="25px" active-color="#E87A90" checked="{{ long}}" bind:change="longChange" />
+        </van-cell>
+        <van-cell title="Can or Can't" custom-class="switchCell">
+            <view slot="icon">
+                <image src="../../images/icon/warning.svg" class ="icon-left"></image>
+            </view>
+            <van-switch  size="25px !important" active-color="#E87A90" checked="{{ checked}}" bind:change="switchChange" />
+        </van-cell>
+    </van-cell-group>
+   
+    <van-toast id="van-toast" duration="2000" />
+</view>
+<view class="footer">
+    <view class="reset" bindtap="resetTask">返回</view>
+    <view class="save" bindtap="submitTask">提交</view>
+</view>

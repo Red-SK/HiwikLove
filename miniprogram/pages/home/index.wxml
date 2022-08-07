@@ -4,10 +4,8 @@
     <view class="yellowRetangle"></view>
     <view class="pinkRetangle"></view>
     <view class="photo">
-        <van-image width="47" height="47" fit="cover" image-class="imageRadius" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+        <van-image width="47" height="47" fit="cover" image-class="imageRadius" bind:click="switchToCP" src="https://i0.hdslb.com/bfs/album/2a3e1db4789148966985f701cc837969ede21804.jpg@2072w.webp" />
     </view>
-
-
     <view class="right">
         <view class="whiteRectangle"></view>
         <van-tabs line-width="125px" color="white" title-active-color="#FFFFFF" active="{{ active }}" bind:change="" nav-class="navTab">
@@ -19,40 +17,61 @@
 <view class="context">
     <view class="cell">
         <van-swipe-cell right-width="{{ 65 }}">
-            <van-cell-group inset="true" >
-                <van-cell clickable="true" custom-class="customCell" icon="flower-o"  title="考研上岸">
-                  <view slot="">
-                    <text class="point1">+500</text>
-                    <text class="point2">|</text>
-                  </view>
+            <van-cell-group inset="true">
+                <van-cell wx:for="{{can}}"  clickable="true" custom-class="customCell" title="{{item.task}}">
+                    <view slot="icon">
+                        <image src="{{item.iconPath}}" class="iconLeft"></image>
+                    </view>
+                    <view slot="">
+                        <text class="point1">{{item.point}}</text>
+                        <text class="point2">|</text>
+                    </view>
                     <view slot="right-icon">
-                        <image src="../../images/icon/rabbit.svg" class="myicon"></image>
+                        <image src="../../images/icon/Mission/tuzi.svg" class="myicon"></image>
                     </view>
                 </van-cell>
-
             </van-cell-group>
-            <view slot="right">删除</view>
+            <view slot="right">
+                <text>删除</text>
+            </view>
         </van-swipe-cell>
-        <view class="item">
 
-        </view>
-       
     </view>
 </view>
 
 <view class="footer">
     <view class="add" bindtap="add">
-      <image class="add-image" src="../../images/icon/add.svg"/>
+        <image class="add-image" src="../../images/icon/add.svg" />
     </view>
 </view>
 
-
-
-
-
-<van-tabbar active-color="pink !important" active="{{ tabvalue }}" bind:change="tabChange">
-    <van-tabbar-item icon="star">任务</van-tabbar-item>
-    <van-tabbar-item icon="shop-collect">奖励</van-tabbar-item>
-    <van-tabbar-item icon="setting">设置</van-tabbar-item>
+<van-tabbar active-color="rgba(252, 192, 204, 1) !important" inactive-color="rgba(229, 229, 229, 1)" active="{{ tabvalue }}" bind:change="tabChange">
+    <van-tabbar-item>
+        <view slot="icon-active">
+            <image src="../../images/icon/tabbar/task1.svg" class="tarbIcon"></image>
+        </view>
+        <view slot="icon">
+            <image src="../../images/icon/tabbar/task0.svg" class="tarbIcon"></image>
+        </view>
+        <text>任务</text>
+    </van-tabbar-item>
+    <van-tabbar-item>
+        <view slot="icon-active">
+            <image src="../../images/icon/tabbar/win1.svg" class="tarbIcon"></image>
+        </view>
+        <view slot="icon">
+            <image src="../../images/icon/tabbar/win0.svg" class="tarbIcon"></image>
+        </view>
+        <text>奖励</text>
+    </van-tabbar-item>
+    <van-tabbar-item>
+        <view slot="icon-active">
+            <image src="../../images/icon/tabbar/set1.svg" class="tarbIcon"></image>
+        </view>
+        <view slot="icon">
+            <image src="../../images/icon/tabbar/set0.svg" class="tarbIcon"></image>
+        </view>
+        <text>设置</text>
+    </van-tabbar-item>
 
 </van-tabbar>
