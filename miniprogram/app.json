@@ -37,6 +37,9 @@
         "van-radio": "@vant/weapp/radio/index",
         "van-radio-group": "@vant/weapp/radio-group/index",
         "van-stepper": "@vant/weapp/stepper/index",
-        "van-toast": "@vant/weapp/toast/index"
+        "van-toast": "@vant/weapp/toast/index",
+        "van-overlay": "@vant/weapp/overlay/index",
+        "van-button": "@vant/weapp/button/index"
+
     }
 }

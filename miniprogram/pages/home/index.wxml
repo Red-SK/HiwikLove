@@ -4,11 +4,11 @@
     <view class="yellowRetangle"></view>
     <view class="pinkRetangle"></view>
     <view class="photo">
-        <van-image width="47" height="47" fit="cover" image-class="imageRadius" bind:click="switchToCP" src="https://i0.hdslb.com/bfs/album/2a3e1db4789148966985f701cc837969ede21804.jpg@2072w.webp" />
+        <van-image width="47" height="47" fit="cover" image-class="imageRadius" bind:click="switchToCP" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201910%2F22%2F20191022110031_cXwPX.thumb.400_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662515905&t=41b63cc79b1098244bd16c9f7acf3c5f" />
     </view>
     <view class="right">
         <view class="whiteRectangle"></view>
-        <van-tabs line-width="125px" color="white" title-active-color="#FFFFFF" active="{{ active }}" bind:change="" nav-class="navTab">
+        <van-tabs line-width="125px" color="white" title-inactive-color="#FFFFFF !important" title-active-color="#FFFFFF !important" active="{{ headTab }}" bind:change="headChange" nav-class="navTab">
             <van-tab title="can"></van-tab>
             <van-tab title="can't"></van-tab>
         </van-tabs>
@@ -16,9 +16,9 @@
 </view>
 <view class="context">
     <view class="cell">
-        <van-swipe-cell right-width="{{ 65 }}">
-            <van-cell-group inset="true">
-                <van-cell wx:for="{{can}}"  clickable="true" custom-class="customCell" title="{{item.task}}">
+        <van-swipe-cell right-width="{{ 120 }}" wx:for="{{tasks}}" wx:key="index" >
+            <van-cell-group inset="true" border="false">
+                <van-cell  id="{{index}}" clickable="true" custom-class="customCell" title="{{item.task}}" bindtap="redeem">
                     <view slot="icon">
                         <image src="{{item.iconPath}}" class="iconLeft"></image>
                     </view>
@@ -31,13 +31,33 @@
                     </view>
                 </van-cell>
             </van-cell-group>
-            <view slot="right">
-                <text>删除</text>
+            <view slot="right" class="van-swipe-cell__right">
+                <view id="{{index}}" class="child" bindtap="delete">删除</view>
+                <view id="{{index}}" class="child" bindtap="edit">编辑</view>
             </view>
-        </van-swipe-cell>
 
+        </van-swipe-cell>
     </view>
 </view>
+<modal hidden="{{booledit}}" bindconfirm="submitEdit" bindcancel="closeEdit">
+    <view  >
+        <van-cell-group >
+            <van-field model:value="{{editvalue0  }}">
+                <view slot="left-icon">
+                    <image src="../../images/icon/24task.svg" class="icon-left"></image>
+                </view>
+            </van-field>
+            <van-field model:value="{{editvalue1  }}">
+                <view slot="left-icon">
+                    <image src="../../images/icon/Mission/tuzi.svg" class="icon-left"></image>
+                </view>
+            </van-field>
+        </van-cell-group>
+    </view>
+
+</modal>
+
+
 
 <view class="footer">
     <view class="add" bindtap="add">
@@ -45,7 +65,7 @@
     </view>
 </view>
 
-<van-tabbar active-color="rgba(252, 192, 204, 1) !important" inactive-color="rgba(229, 229, 229, 1)" active="{{ tabvalue }}" bind:change="tabChange">
+<van-tabbar active-color="rgba(252, 192, 204, 1) !important" inactive-color="rgba(229, 229, 229, 1)" active="{{ hailTab }}" bind:change="hailChange">
     <van-tabbar-item>
         <view slot="icon-active">
             <image src="../../images/icon/tabbar/task1.svg" class="tarbIcon"></image>

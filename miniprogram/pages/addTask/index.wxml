@@ -1,6 +1,6 @@
 <view class="context">
     <van-cell-group inset >
-        <van-field type="digit !important213" model:value="{{ task }}" placeholder="请输入任务名称" >
+        <van-field type="digit !important" model:value="{{ task }}" placeholder="请输入任务名称" >
             <view slot="left-icon">
                 <image src="../../images/icon/24task.svg" class="icon-left"></image>
             </view>

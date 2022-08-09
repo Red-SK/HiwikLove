@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        categorys: ['学习', '健身', '生活', '情侣'],
+        categorys: ['学习', '运动', '生活', '情侣'],
         show: false,
         category: "选择任务类型",
         task: "",
@@ -146,7 +146,7 @@ Page({
             })
             return
         }
-        if (this.data.task.length > 10) {
+        if (this.data.task.length > 20) {
             wx.showToast({
                 title: '任务标题过长',
                 icon: 'error',
@@ -171,13 +171,16 @@ Page({
                 long: this.data.long,
             }
         }).then((res) => {
-            Toast.success('任务添加成功');
+            wx.showToast({
+                title:"任务添加成功",
+                duration:200,
+            })
             setTimeout(
                 function () { //注意function这里不能缺少
                     wx.navigateTo({
                         url: '../home/index',
                     })
-                }, 800)
+                }, 200)
 
         })
     },

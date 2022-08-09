@@ -45,6 +45,7 @@
 }
 .right{
     width: 100%;
+
 }
 .navTab {
     height:30px;
@@ -72,8 +73,9 @@
     margin-top: 10px;
 }
 .customCell{
-
+    border-radius: 5px 5px 5px 5px;
     margin-bottom: 8px;
+
 }
 .point1{
     color: rgba(240, 161, 176, 1);
@@ -116,22 +118,37 @@
     padding-right: 10px;
 }
 .van-swipe-cell__right {
-    position: relative;
-    width: 65px;
-    height:46px;
-    font-size: 14px;
-    line-height: 46px;
-    color: #fff;
-    text-align: center;
-    background-color: #D0104C;
-    opacity: 0.8 ;
-    border-radius: 3px 0px 0px 3px  ;
+    height: inherit;
+	width: 120px;
+	color: white;
+	display: flex;
+   
+}
+.van-swipe-cell__right .child{
+    background-color: #FEDFE1;
+    width: 60px;
+    height: 44px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+   
+}
+.van-swipe-cell__right .child:first-child{
+    background-color: #EEA9A9;
+    border-radius: 4px 0px 0px 4px  ;
 }
 .tarbIcon{
     margin-top: 3px;
     margin-left: 1px;
     height: 20px;
     width: 20px;
+}
+.icon-left {
+    padding-top: 4px;
+    padding-right: 10px;
+    width: 16px !important;
+    height: 16px !important;
 }
 
 
